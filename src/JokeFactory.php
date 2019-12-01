@@ -2,7 +2,8 @@
 
 namespace Binaryk\Joke;
 
-class JokeFactory {
+class JokeFactory
+{
     /**
      * @var array
      */

@@ -5,8 +5,8 @@ namespace Binaryk\Joke\Tests;
 use Binaryk\Joke\JokeFactory;
 use PHPUnit\Framework\TestCase;
 
-class JokeFactoryTest extends TestCase {
-
+class JokeFactoryTest extends TestCase
+{
     /**
      * @test
      */
@@ -22,5 +22,4 @@ class JokeFactoryTest extends TestCase {
         $joke = $factory->randomJoke();
         $this->assertContains($joke, $jokes);
     }
-
 }

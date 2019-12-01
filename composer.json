@@ -1,0 +1,25 @@
+{
+  "name": "binaryk/joke",
+  "description": "Random joke.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Lupacescu Eduard",
+      "email": "lupacescueduard@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Binaryk\\Joke\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Binaryk\\Joke\\Tests": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.4"
+  }
+}

@@ -3,13 +3,11 @@
 namespace Binaryk\Joke\Tests;
 
 use Binaryk\Joke\Facades\Joke;
-use Binaryk\Joke\JokeFactory;
 use Binaryk\Joke\JokeServiceProvider;
 use Illuminate\Support\Facades\Artisan;
 use Orchestra\Testbench\TestCase;
 
 /**
- * @package Binaryk\Joke\Tests;
  * @author Eduard Lupacescu <eduard.lupacescu@binarcode.com>
  */
 class LaravelTest extends TestCase
@@ -52,7 +50,6 @@ class LaravelTest extends TestCase
         Joke::shouldReceive('randomJoke')
             ->once()
             ->andReturn('some joke');
-
 
         $this->get('jokes')
             ->assertViewIs('jokes::joke')

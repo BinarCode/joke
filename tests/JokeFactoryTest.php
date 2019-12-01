@@ -16,7 +16,6 @@ class JokeFactoryTest extends TestCase
      */
     public function it_say_random_joke()
     {
-
         $mock = new MockHandler([
             new Response(200, [], '{ "type": "success", "value": { "id": 561, "joke": "Joke here", "categories": [] } }'),
         ]);

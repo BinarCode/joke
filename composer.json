@@ -8,7 +8,9 @@
       "email": "lupacescueduard@gmail.com"
     }
   ],
-  "require": {},
+  "require": {
+    "guzzlehttp/guzzle": "^6.4"
+  },
   "autoload": {
     "psr-4": {
       "Binaryk\\Joke\\": "src/"
@@ -16,10 +18,21 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Binaryk\\Joke\\Tests": "tests/"
+      "Binaryk\\Joke\\Tests\\": "tests/"
     }
   },
   "require-dev": {
-    "phpunit/phpunit": "^8.4"
+    "phpunit/phpunit": "^8.4",
+    "orchestra/testbench": "^4.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Binaryk\\Joke\\JokeServiceProvider"
+      ],
+      "aliases": {
+        "Joke": "Binaryk\\Joke\\Facades\\Joke"
+      }
+    }
   }
 }

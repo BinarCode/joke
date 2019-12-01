@@ -2,23 +2,20 @@
 
 namespace Binaryk\Joke;
 
+use GuzzleHttp\Client;
+
 class JokeFactory
 {
-    /**
-     * @var array
-     */
-    protected $jokes = [
-        'Chuck Norris threw a grenade and killed 50 people, then it exploded.',
-        'Chuck Norris has cows grilling his steaks for him.',
-        'Chuck Norris can kill two stones with one bird.',
-        'Chuck Norris can hear sign language.',
-    ];
+    const API = 'http://api.icndb.com/jokes/random';
 
-    public function __construct(array $jokes = null)
+    /**
+     * @var Client
+     */
+    protected $client;
+
+    public function __construct(Client $client = null)
     {
-        if ($jokes) {
-            $this->jokes = $jokes;
-        }
+        $this->client = $client ?: new Client();
     }
 
     /**
@@ -26,6 +23,10 @@ class JokeFactory
      */
     public function randomJoke()
     {
-        return $this->jokes[array_rand($this->jokes)];
+        $response = $this->client->get(self::API);
+
+        $joke = json_decode($response->getBody()->getContents());
+
+        return $joke->value->joke;
     }
 }
